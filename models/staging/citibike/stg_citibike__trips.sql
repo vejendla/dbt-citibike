@@ -1,0 +1,1 @@
+select * from {{ source('citibike', 'citibike_trips')}} where tripduration IS NOT NULL

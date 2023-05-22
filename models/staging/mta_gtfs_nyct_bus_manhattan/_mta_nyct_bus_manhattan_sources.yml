@@ -1,0 +1,15 @@
+version: 2
+
+sources:
+  - name: mta_nyct_bus_manhattan
+    database: citibike-portfolio-project
+    schema: mta_gtfs_nyct_bus_manhattan
+    tables:
+      - name: mta_nyct_bus_manhattan_calendar
+      - name: mta_nyct_bus_manhattan_calendar_dates
+      - name: mta_nyct_bus_manhattan_routes
+      - name: mta_nyct_bus_manhattan_shapes
+      - name: mta_nyct_bus_manhattan_stop_times
+      - name: mta_nyct_bus_manhattan_stops
+      - name: mta_nyct_bus_manhattan_trips
+    
