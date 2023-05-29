@@ -1,1 +1,1 @@
-select * from {{ source('citibike', 'citibike_trips')}} where tripduration IS NOT NULL
+select * from {{ source('citibike', 'citibike_trips')}} where tripduration IS NOT NULL AND starttime>='2018-01-01'

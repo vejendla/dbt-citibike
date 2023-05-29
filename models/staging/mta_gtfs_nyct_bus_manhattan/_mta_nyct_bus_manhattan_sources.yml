@@ -3,13 +3,44 @@ version: 2
 sources:
   - name: mta_nyct_bus_manhattan
     database: citibike-portfolio-project
+    description: Manhattan Bus GTFS data from http://web.mta.info/developers/developer-data-terms.html#data. For additional information about GTFS, see https://gtfs.org/
     schema: mta_gtfs_nyct_bus_manhattan
     tables:
       - name: mta_nyct_bus_manhattan_calendar
+        description: Calendar.txt file
+        columns:
+          - name: service_id
+            description: contains the service_id
       - name: mta_nyct_bus_manhattan_calendar_dates
+        description: Contains calendar dates of schedules
+        columns:
+          - name: service_id
+            description: contains the service_id
       - name: mta_nyct_bus_manhattan_routes
+        columns:
+          - name: route_id
+            description: The name of the route that is displayed on the callsign on the front of the bus
+        description: Contains a list of MTA bus routes that operate in Manhattan
       - name: mta_nyct_bus_manhattan_shapes
+        description: Contains shapes for routes
+        columns:
+          - name: shape_id
+            description: Contains the shapes
       - name: mta_nyct_bus_manhattan_stop_times
+        description: Contains stop times for each route
+        columns:
+          - name: trip_id
+            description: non unique trip IDs
       - name: mta_nyct_bus_manhattan_stops
+        description: Contains a list of stops 
+        columns:
+          - name: stop_id
+            description: Unique stop ID
+            tests:
+              - unique
       - name: mta_nyct_bus_manhattan_trips
+        description: Contains a list of trips
+        columns:
+          - name: route_id
+            description: non unique route id
     
