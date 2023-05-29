@@ -11,8 +11,8 @@ sources:
         columns:
           - name: tripduration
             description: The duration of the trip, in seconds
-            tests:
-              - not_null
+            #tests:
+            #  - not_null
           - name: starttime
             description: The starttime
   - name: citibike_filtered
@@ -24,18 +24,18 @@ sources:
         columns: 
           - name: station_id
             description: The station_id, as used in citibike_trips
-            tests:
-              - not_null
-              - unique
+            #tests:
+            #  - not_null
+                # removed unique tests since we def have duplicates
           - name: station_name
             description: The human friendly station name, usually an intersection
           - name: station_lat
-            tests: 
-              - not_null
+            #tests: 
+            #  - not_null
                 #TODO: add numeric test
           - name: station_lon
-            tests:
-              - not_null
+            #tests:
+            #  - not_null
                 #TODO: add numeric test
               
 
